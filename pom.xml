@@ -65,14 +65,6 @@
                     <additionalClasspathElements>
                         <additionalClasspathElement>${basedir}/src/test/resources/META.INF/</additionalClasspathElement>
                     </additionalClasspathElements>
-                    <suiteXmlFiles>
-                        <suiteXmlFile>src/test/resources/suites/${suiteXmlFile}</suiteXmlFile>
-                    </suiteXmlFiles>
-                    <systemPropertyVariables>
-                        <propertyName>${featureThreadCount}</propertyName>
-                        <propertyName>${cenarioThreadCount}</propertyName>
-                        <propertyName>${retryLimit}</propertyName>
-                    </systemPropertyVariables>
                 </configuration>
             </plugin>
         </plugins>
