@@ -25,21 +25,19 @@ public class UsersSteps extends UsersAction {
 
     @Dado("que o usuário queira listar um usuário inexistente")
     public void queOUsuarioQueiraListarUmUsuarioInexistente(){
-        consultarUserInexistente = true;
+        consultarUsers = true;
         idUser = "23";
     }
     // --------------------------------------------------------- QUANDO --------------------------------------------------------//
-    @Quando("o serviço (.*) é consultado")
-    public void oServicoEhConsultado(String path){
+    @Quando("o serviço (.*) é consultado resultando status (.+)")
+    public void oServicoEhConsultado(String path, int codigo){
         setPathEmExecucao(path);
         switch (path){
             case Paths.PATH_USERS:
                 if(listarUsers){
-                    requestGet(path, statusCodeOk);
+                    requestGet(path, codigo);
                 } else if(consultarUsers){
-                    requestGetWithId(idUser, path, statusCodeOk);
-                } else if(consultarUserInexistente){
-                    requestGetWithId(idUser, path, statusCodeNotFound);
+                    requestGetWithId(idUser, path, codigo);
                 }
                 break;
         }

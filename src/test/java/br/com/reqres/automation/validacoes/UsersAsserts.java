@@ -53,7 +53,7 @@ public class UsersAsserts extends UsersAction {
     }
 
     public void validarErro(){
-        if(getStatusCode() == statusCodeNotFound){
+        if(getStatusCode() == 404){
             Log.info("Nenhum Registro Encontrado!");
         }
     }
